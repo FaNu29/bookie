@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #faf7f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            scroll-behavior: smooth;
+            padding-bottom: 70px;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background-color: #faf7f0;
+            border: none;
+            height: 50px;
+           
+        }
+
+        .navbar-custom .navbar-nav>li {
+            margin-right: 20px;
+            /* Adjust the value to your preferred gap size */
+        }
+
+        .navbar-custom .navbar-nav>li>a {
+            color: #404430;
+        
+           
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #404430;
+            font-family: Copperplate, Papyrus, fantasy;
+            font-weight: bold;
+            gap: 40px;
+        }
+
+        .navbar-custom .navbar-nav>.active>a {
+            background-color: #53583E;
+            color: #e4e7da;
+            border-radius: 20px;
+        }
+
+        .navbar-custom .navbar-nav>li>a:hover {
+            transform: scale(1.2);
+            color:#e4e7da;
+            border-radius: 10px;
+            background-color: #717463;
+            font-style: oblique;
+        }
+
+        .navbar-custom .navbar-right>li>a {
+            color: #53583E;
+            gap: 20;
+        }
+        .dropdown-menu {
+            background-color: #faf7f0;
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+
+        .navbar-toggle {
+            background-color: #53583E;
+            border-color: #53583E;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: #e4e7da;
+        }
+        /* Hero Section */
+        .hero {
+            background: url(images/aboutus.png) center/cover no-repeat;
+            text-align: center;
+            padding: 60px 50px;
+            height: 300px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero p {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #faf7f0;
+        }
+
+        .about .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .about .text {
+            width: 50%;
+        }
+
+        /* Empower & Help Section */
+        .empower,
+        .help {
+            background-color: #f9f9f9;
+        }
+
+        .empower .container,
+        .help .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .empower .text,
+        .help .text {
+            width: 45%;
+            text-align: left;
+        }
+
+        .empower img,
+        .help img {
+            width: 45%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .help{
+            background-color: #faf7f0
+        }
+        .contact {
+            background-color: transparent;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            font-size: 1.2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item strong {
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        .contact-item p {
+            margin-top: 5px;
+            color: #555;
+        }
+
+        .contact-item a {
+            color: #53583E;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links a {
+            color: #53583E;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #404430;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bokkie</a>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li ><a href="home.html">Home</a></li>
+                    <li><a href="recommendation.html">Recommendation</a></li>
+                    <li class="active"><a href="About Us.html">About Us</a></li>
+                    <li><a href="download.html">Download App</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>About Us</h1>
+        <p>We make sure your books reach the right readers.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about">
+        <div class="container">
+            <div class="text">
+                <h2>We make sure your idea & creation are delivered properly</h2>
+                <p>Our team is dedicated to helping you find and deliver the best books to readers all over the world.
+                    Whether it's rare finds or popular titles, we have something for everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empower Section -->
+    <section class="empower">
+        <div class="container">
+            <div class="text">
+                <h2>We Empower Book Lovers</h2>
+                <p>We are more than just an online bookshop. We empower book lovers to find their perfect books, whether
+                    you're reading for leisure, study, or research.</p>
+            </div>
+            <img src="images/read.png" alt="Empower Image">
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help">
+        <div class="container">
+            <img src="images/event.png" alt="Author Event">
+            <div class="text">
+                <h2>We Help Books Reach More Readers</h2>
+                <p>We aim to bring books to readers around the world. No matter where you are, we help make your favorite
+                    books accessible and easy to purchase.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-details">
+                <p>If you have any questions or inquiries, feel free to reach out to us through the following:</p>
+
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <p><a href="tel:+1234567890">+123 456 7890</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <p><a href="mailto:info@bookie.com">info@bookie.com</a></p>
+                    <strong>Address:</strong>
+                    <p>123 Bookie Street, Book City, BC 12345</p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Follow Us:</strong>
+                    <div class="social-links">
+                        <a href="https://facebook.com/bookie" target="_blank">Facebook</a> |
+                        <a href="https://instagram.com/bookie" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Bookie. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

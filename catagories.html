@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #fffaca9e, #e4e7da);
+
+        }
+
+        .navbar-custom {
+            background-color: #faf7f0;
+            border: none;
+            height: 50px;
+
+        }
+
+        .navbar-custom .navbar-nav>li>a {
+            color: #404430;
+
+
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #404430;
+            font-family: Copperplate, Papyrus, fantasy;
+            font-weight: bold;
+            gap: 40px;
+        }
+
+        .navbar-custom .navbar-nav>li {
+            margin-right: 20px;
+            
+        }
+
+        .navbar-custom .navbar-nav>.active>a {
+            background-color: #53583E;
+            color: #e4e7da;
+            border-radius: 20px;
+        }
+
+        .navbar-custom .navbar-nav>li>a:hover {
+            transform: scale(1.2);
+            color: #e4e7da;
+            border-radius: 10px;
+            background-color: #717463;
+            font-style: oblique;
+        }
+
+        .navbar-custom .navbar-right>li>a {
+            color: #53583E;
+            gap: 20;
+        }
+
+        .dropdown-menu {
+            background-color: #faf7f0;
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+
+        .navbar-toggle {
+            background-color: #53583E;
+            border-color: #53583E;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: #e4e7da;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #faf7f0;
+            padding-top: 20px;
+            border-right: 1px solid #ccc;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #404430;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background-color: #53583E;
+            color: white;
+            border-radius: 8px;
+        }
+
+
+        .container {
+            margin: 50px;
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .author-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .author-card {
+            width: 50%;
+            text-align: center;
+            padding: 30px;
+            background-color: #53583e8e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .author-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .author-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .author-card h3 {
+            font-size: 1.5rem;
+            color: #53583E;
+            font-weight: 600;
+        }
+
+        .audiobooks {
+            margin-top: 50px;
+            padding: 15px;
+            background-color: transparent;
+        }
+
+        .audiobooks h2 {
+            font-size: 2.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #53583E;
+
+        }
+
+        .audiobook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .audiobook-item {
+            display: flex;
+            align-items: center;
+            background-color: #53583e1f;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audiobook-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .audiobook-item img {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .audiobook-info {
+            flex-grow: 1;
+            padding-left: 15px;
+        }
+
+        .audiobook-info h4 {
+            font-size: 1.5rem;
+            margin: 0 0 5px;
+        }
+
+        .audiobook-info p {
+            font-size: 1rem;
+            color: #777;
+            margin: 0;
+        }
+
+        .audiobook-info .duration {
+            font-size: 0.85rem;
+            color: #333;
+            margin-top: 8px;
+        }
+
+        .play-icon {
+            font-size: 24px;
+            color: #53583E;
+            cursor: pointer;
+        }
+
+        /* Books Showcase Section */
+        .books-showcase {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .book-item {
+            background-color: #53583e1f;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .book-item h3 {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .book-item p {
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bokkie</a>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li ><a href="home.html">Home</a></li>
+                    <li ><a href="recommendation.html">Recommendation</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="download.html">Download App</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="sidebar">
+        <a href="#">Fiction</a>
+        <a href="#">Non-Fiction</a>
+        <a href="#">Science Fiction</a>
+        <a href="#">Mystery</a>
+        <a href="#">Romance</a>
+        <a href="#">Horror</a>
+    </div>
+
+    <div class="container">
+
+        <!-- Author Section -->
+        <section class="author-section">
+            <div class="author-card">
+                <img src="images/author.png" alt="Author">
+                <h3>Top Authors</h3>
+            </div>
+            <div class="author-card">
+                <img src="images/female.png" alt="Author">
+                <h3>Female Authors</h3>
+            </div>
+            <div class="author-card">
+                <img src="images/greek.png" alt="Author">
+                <h3>Greek Originals</h3>
+            </div>
+        </section>
+
+        <!-- Audiobooks Section -->
+        <section class="audiobooks">
+            <h2>Audiobooks</h2>
+            <div class="audiobook-grid">
+                <div class="audiobook-item">
+                    <img src="images/harry.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>Harry Potter and the Sorcerer's Stone</h4>
+                        <p>J.K. Rowling</p>
+                        <div class="duration">12 hrs 30 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/game.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>A Game of Thrones</h4>
+                        <p>George R. R. Martin</p>
+                        <div class="duration">20 hrs 55 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/steve.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>Steve Jobs</h4>
+                        <p>Walter Isaacson</p>
+                        <div class="duration">15 hrs 45 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/the_great.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>The Great Gatsby</h4>
+                        <p>F. Scott Fitzgerald</p>
+                        <div class="duration">7 hrs 20 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/hobbit.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>The Hobbit</h4>
+                        <p>J.R.R. Tolkien</p>
+                        <div class="duration">10 hrs 25 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/1984.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>1984</h4>
+                        <p>George Orwell</p>
+                        <div class="duration">9 hrs 10 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/pride.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>Pride and Prejudice</h4>
+                        <p>Jane Austen</p>
+                        <div class="duration">11 hrs 5 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+                <div class="audiobook-item">
+                    <img src="images/brave.png" alt="Audiobook">
+                    <div class="audiobook-info">
+                        <h4>Brave New World</h4>
+                        <p>Aldous Huxley</p>
+                        <div class="duration">8 hrs 50 mins</div>
+                    </div>
+                    <span class="glyphicon glyphicon-play-circle play-icon"></span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Books Showcase Section -->
+        <h1>E-Books Showcase</h1>
+        <section class="books-showcase">
+            <div class="book-item">
+                <img src="images/jungle.png" alt="Book">
+                <h3>The Jungle Book</h3>
+                <p>Rudyard Kipling</p>
+            </div>
+            <div class="book-item">
+                <img src="images/bird.png" alt="Book">
+                <h3>The Wind Blows</h3>
+                <p>Henry Kendal</p>
+            </div>
+            <div class="book-item">
+                <img src="images/girl.png" alt="Book">
+                <h3>The Girl with the Dragon Tattoo</h3>
+                <p>Stieg Larsson</p>
+            </div>
+            <div class="book-item">
+                <img src="images/how to.png" alt="Book">
+                <h3>How to be Both</h3>
+                <p>Ali Smith</p>
+            </div>
+            <div class="book-item">
+                <img src="images/trick.png" alt="Book">
+                <h3>The Trick</h3>
+                <p>Emanuel Bergmann</p>
+            </div>
+
+
+            <div class="book-item">
+                <img src="images/lost.png" alt="Book">
+                <h3>Lost and Found</h3>
+                <p>Brooke Davis</p>
+            </div>
+            <div class="book-item">
+                <img src="images/call.png" alt="Book">
+                <h3>Call of the Wild</h3>
+                <p>Jack London</p>
+            </div>
+
+            <div class="book-item">
+                <img src="images/life.png" alt="Book">
+                <h3>Life of a Pi</h3>
+                <p>Yann Martel</p>
+            </div>
+
+            <div class="book-item">
+                <img src="images/late.png" alt="Book">
+                <h3>Late Night Thoughts</h3>
+                <p>VEE</p>
+            </div>
+            <div class="book-item">
+                <img src="images/caged.png" alt="Book">
+                <h3>Caged Bird</h3>
+                <p>Maya Angelou</p>
+            </div>
+            <div class="book-item">
+                <img src="images/outsi.png" alt="Book">
+                <h3>The Outsider Lands</h3>
+                <p>Hannah Kohler/p>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #ebf4f1, #e4e7da);
+            overflow: hidden;
+        }
+        .navbar-custom {
+            background-color: #faf7f0;
+            border: none;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #404430;
+            font-family: Copperplate, Papyrus, fantasy;
+            font-weight: bold;
+        }
+
+        .navbar-custom .navbar-nav>li {
+            margin-right: 20px;
+        }
+
+        .navbar-custom .navbar-nav>li>a {
+            color: #404430;
+        }
+
+        .navbar-custom .navbar-nav>.active>a {
+            background-color: #53583E;
+            color: #e4e7da;
+            border-radius: 20px;
+        }
+
+        .navbar-custom .navbar-nav>li>a:hover {
+            transform: scale(1.2);
+            color:#e4e7da;
+            border-radius: 2px;
+            background-color: #53583E;
+            font-style: oblique;
+        }
+
+        .navbar-custom .navbar-right>li>a {
+            color: #53583E;
+        }
+
+        /* Styles for dropdown visibility */
+        .dropdown-menu {
+            background-color: #faf7f0;
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+
+        .navbar-toggle {
+            background-color: #53583E;
+            border-color: #53583E;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: #e4e7da;
+        }
+
+        
+        .container1 {
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            display: flex;
+            border-radius: 20px;
+
+            overflow: hidden;
+            box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.2);
+        }
+        .image-section {
+            flex: 1;
+            background: url('images/login.png') no-repeat center;
+            background-size: cover;
+            position: relative;
+            border-radius: 10px;
+
+        }
+
+       
+        .form-section {
+            flex: 1;
+            background-color: #53583E;
+            color: #e4e7da;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 15px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px 40px;
+            border-radius: 30px;
+            border: none;
+            background: #e4e7da;
+            color: #53583E;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .input-box:hover{
+            transform: scale(1.1);
+        }
+
+        .input-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #53583E;
+        }
+
+        .btn {
+            background: #e4e7da;
+            color: #53583E;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d4d6c4;
+            transform: scale(1.1);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            left: 25px;
+            gap: 20px;
+        }
+        .social-icons a {
+            font-size: 24px;
+            color: #e4e7da;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bokkie</a>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="recommendation.html">Recommendation</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="download.html">Download App</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container1">
+        
+        <div class="image-section"></div>
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1>LOGIN!</h1>
+            <form action="">
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$">
+                    <i class="bx bxs-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+        
+                <button type="submit" class="btn">Login</button>
+                <p><br>or login with social platforms</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   
+
+    
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App - Bokkie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #faf7f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            background-color: #faf7f0;
+            border: none;
+            height: 50px;
+
+        }
+
+        .navbar-custom .navbar-nav>li>a {
+            color: #404430;
+
+
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #404430;
+            font-family: Copperplate, Papyrus, fantasy;
+            font-weight: bold;
+            gap: 40px;
+        }
+
+        .navbar-custom .navbar-nav>li {
+            margin-right: 20px;
+            
+        }
+
+        .navbar-custom .navbar-nav>.active>a {
+            background-color: #53583E;
+            color: #e4e7da;
+            border-radius: 20px;
+        }
+
+        .navbar-custom .navbar-nav>li>a:hover {
+            transform: scale(1.2);
+            color: #e4e7da;
+            border-radius: 10px;
+            background-color: #717463;
+            font-style: oblique;
+        }
+
+        .navbar-custom .navbar-right>li>a {
+            color: #53583E;
+            gap: 20;
+        }
+
+        .dropdown-menu {
+            background-color: #faf7f0;
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+
+        .navbar-toggle {
+            background-color: #53583E;
+            border-color: #53583E;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: #e4e7da;
+        }
+
+        .download-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .content h1 {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #404430;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.3rem;
+            color: #53583E;
+            margin-bottom: 30px;
+        }
+
+        .download-buttons a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #53583E;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 2rem;
+            margin: 10px 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .download-buttons a:hover {
+            background-color: #717463;
+            transform: translateY(-5px);
+        }
+
+        .app-preview img {
+            width: 100%;
+            max-width: 450px; /* Increased the width of the phone image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-height: 800px;
+            border-radius: 25px;
+            border: 3px solid #121312;
+            margin-left: 50px; /* Moved the phone image slightly to the right */
+        }
+
+        .content {
+            padding-top: 100px;
+        }
+
+        .footer {
+            background-color: #404430;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bokkie</a>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li ><a href="home.html">Home</a></li>
+                    <li ><a href="recommendation.html">Recommendation</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li class="active"><a href="download.html">Download App</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="download-section">
+        <div class="container">
+            <div class="row">
+                <!-- Left Content (Text + Download Buttons) -->
+                <div class="col-md-6 col-sm-12">
+                    <div class="content">
+                        <h1>Design Your Perfect Reading Day</h1>
+                        <p>Get access to books, audiobooks, and e-books, all in one place. Download the app today!</p>
+                        <div class="download-buttons">
+                            <a href="#">Download on the App Store</a><br>
+                            <a href="#">Get it on Google Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content (Phone Preview) -->
+                <div class="col-md-6 col-sm-12">
+                    <div class="app-preview">
+                        <img src="images/BOOKIE.png" alt="Phone Preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Bokkie. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

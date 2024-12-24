@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHub</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #faf7f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-bottom: 70px;
+        }
+        /* Navbar */
+        .navbar-custom {
+            background-color: #faf7f0;
+            border: none;
+            height: 50px;
+           
+        }
+
+        .navbar-custom .navbar-nav>li {
+            margin-right: 20px;
+            /* Adjust the value to your preferred gap size */
+        }
+
+        .navbar-custom .navbar-nav>li>a {
+            color: #404430;
+        
+           
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #404430;
+            font-family: Copperplate, Papyrus, fantasy;
+            font-weight: bold;
+            gap: 40px;
+        }
+
+        .navbar-custom .navbar-nav>.active>a {
+            background-color: #53583E;
+            color: #e4e7da;
+            border-radius: 20px;
+        }
+
+        .navbar-custom .navbar-nav>li>a:hover {
+            transform: scale(1.2);
+            color:#e4e7da;
+            border-radius: 10px;
+            background-color: #717463;
+            font-style: oblique;
+        }
+
+        .navbar-custom .navbar-right>li>a {
+            color: #53583E;
+            gap: 20;
+        }
+        .dropdown-menu {
+            background-color: #faf7f0;
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+
+        .navbar-toggle {
+            background-color: #53583E;
+            border-color: #53583E;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: #e4e7da;
+        }
+
+
+
+
+        /* Sections */
+        .section {
+
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* This Month Section */
+        .this-month {
+            background-color: #f9f9f9;
+            position: relative;
+            text-align: center;
+            /* Centering text and button */
+        }
+
+        .this-month img {
+            width: 100%;
+            /* Make sure image takes full width */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .read-more-btn {
+            position: absolute;
+            top: 35%;
+            /* Position the button in the middle of the image */
+            left: 45%;
+            /* Center it horizontally */
+            transform: translate(-50%, -50%);
+            /* Adjust for perfect centering */
+            background-color: #404430;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 10;
+            /* Ensure the button stays above the image */
+        }
+
+        .book-carousel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .book-carousel {
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* New Released Books & Bestselling Books */
+        .new-released-books{
+            padding:50px 20px 10px 20px; 
+            background-color: #f9f9f9;
+
+        }
+        .book-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .book-card {
+            width: 200px;
+            text-align: center;
+        }
+
+        .book-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .book-card:hover{
+            transform: scale(1.2);
+        }
+
+        .book-card p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+
+        .bestselling-books{
+            padding:50px 20px 10px 20px; 
+        }
+
+        /* Flash Sale */
+        .flash-sale {
+            background-color: #e4e7da;
+            padding: 50px 0;
+        }
+
+
+        .flash-sale .countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Favorite Authors Section */
+        .favorite-authors {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        .authors img {
+            width: 200px;
+            height:200px;
+            border-radius: 50%;
+            margin: 0 15px;
+            object-fit: contain;
+        }
+
+        .authors img:hover{
+            transform: scale(1.2);
+        }
+
+
+        /* Footer */
+        .footer {
+            background-color: #404430;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bokkie</a>
+            </div>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li ><a href="home.html">Home</a></li>
+                    <li class="active"><a href="recommendation.html">Recommendation</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="download.html">Download App</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- This Month Section -->
+    <section class="this-month section">
+        <div class="bg">
+            <img src="images/this month.png" alt="">
+        </div>
+
+        <button class="read-more-btn">Read More</button>
+
+    </section>
+
+    <!-- New Released Books Section -->
+    <section class="new-released-books section">
+        <h2>New Released Books</h2>
+        <div class="book-list">
+            <div class="book-card">
+                <img src="images/brave.png" alt="Book 1">
+                <p>Brave New World</p>
+            </div>
+            <div class="book-card">
+                <img src="images/bird.png" alt="Book 1">
+                <p>The Wind Blows Whenever It PLeases</p>
+            </div>
+            <div class="book-card">
+                <img src="images/hobbit.png" alt="Book 1">
+                <p>The Hobbit</p>
+            </div>
+            <div class="book-card">
+                <img src="images/jungle.png" alt="Book 2">
+                <p>The second Jungle Book</p>
+            </div>
+            <div class="book-card">
+                <img src="images/lost.png" alt="Book 3">
+                <p>Lost and Found</p>
+            </div>
+            <div class="book-card">
+                <img src="images/life.png" alt="Book 4">
+                <p>Life of Pie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestselling Books Section -->
+    <section class="bestselling-books section">
+        <h2>Bestselling Books</h2>
+        <div class="book-list">
+            <div class="book-card">
+                <img src="images/outsi.png" alt="Book 1">
+                <p>Best Seller 1</p>
+            </div>
+            <div class="book-card">
+                <img src="images/pride.png" alt="Book 2">
+                <p>Best Seller 2</p>
+            </div>
+            <div class="book-card">
+                <img src="images/call.png" alt="Book 3">
+                <p>Best Seller 3</p>
+            </div>
+            <div class="book-card">
+                <img src="images/caged.png" alt="Book 4">
+                <p>Best Seller 4</p>
+            </div>
+            <div class="book-card">
+                <img src="images/1984.png" alt="Book 4">
+                <p>Best Seller 5</p>
+            </div>
+            <div class="book-card">
+                <img src="images/sl-2.png" alt="Book 4">
+                <p>Best Seller 6</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sale Section -->
+    <section class="flash-sale section">
+        <h2>Flash Sale</h2>
+        <div class="countdown">Hurry up! Time Left: 03:14:50</div>
+    </section>
+
+    <!-- Favorite Authors Section -->
+    <section class="favorite-authors section">
+        <h2>Favorite Authors</h2>
+        <div class="authors">
+            <img src="images/auth1.png" alt="Author 1">
+            <img src="images/auth2.png" alt="Author 2">
+            <img src="images/auth3.png" alt="Author 3">
+            <img src="images/auth4.png" alt="Author 4">
+            <img src="images/auth5.png" alt="Author 4">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 BookHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
